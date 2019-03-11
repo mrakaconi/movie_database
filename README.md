@@ -1,6 +1,13 @@
 # Movie_database
+
  
         - header: (Marko)
+
+
+
+
+        - header:
+
             - logo
             - dodaj film
             - naslovna
@@ -17,3 +24,4 @@
         - footer: (Nikola)
             - credits
             - usefull links
+
