@@ -1,7 +1,7 @@
 # Movie_database
 
 
- <!--  
+
         - header:
             - logo
             - dodaj film
@@ -19,4 +19,4 @@
         - footer:
             - credits
             - usefull links
-    -->
+ 
