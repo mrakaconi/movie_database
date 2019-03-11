@@ -1,8 +1,6 @@
 # Movie_database
-
-
- <!--  
-        - header:
+ 
+        - header: (Marko)
             - logo
             - dodaj film
             - naslovna
@@ -16,7 +14,6 @@
                 -pozivamo iz APIja (ako ima)
             - iframe trailera
                 -pozivamo iz APIja (ako ima)
-        - footer:
+        - footer: (Nikola)
             - credits
             - usefull links
-    -->
