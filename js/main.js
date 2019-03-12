@@ -1,21 +1,96 @@
-const s = selektor => document.getElementById(selektor)
-const getUrl = "https://baza-filmova.herokuapp.com/filmovi/"
-const getNaslov = "https://baza-filmova.herokuapp.com/pokazi-film/5be9da410f0a326f85bd120f"
-const postUrl = "https://baza-filmova.herokuapp.com/dodaj-film/"
-const deleteUrl = "https://baza-filmova.herokuapp.com/obrisi-film/"
-let stringUpis = ""
+const prikaz = document.getElementById('ispis')
+const kriterij = document.getElementById('title')
+const strGoreGod = document.getElementById('gore_god')
+const strDoleGod = document.getElementById('dole_god')
+const strGoreNaz = document.getElementById('gore_naz')
+const strDoleNaz = document.getElementById('dole_naz')
 
-const rezultatDiv = s("ispis")
 
-fetch("https://baza-filmova.herokuapp.com/filmovi")
-  .then( response => response.json() )
-  .then( function (response) {
-    console.log(response)
-    for( let i = 0; i < 10; i++) {
-      stringUpis += `
-      <img src="${response[i].slika}" alt="" width="100">
-        ${response[i].naziv}<br>
-      `
-    }
-    rezultatDiv.innerHTML = stringUpis
+
+let sviFilmovi = []
+
+function render(niz) {
+  let sablon = ''
+  for (var i = 0; i < niz.length; i++) {
+    sablon += ` <img src="${niz[i].slika}" alt="" width="100">
+                <h3>${niz[i].naziv}</h3>
+                <h3>${niz[i].godina}</h3>
+                `
+  }
+  prikaz.innerHTML = sablon
+}
+
+fetch('https://baza-filmova.herokuapp.com/filmovi/ ')
+  .then(res => res.json())
+  .then(data => {
+    sviFilmovi = data
+    render(data)    
   })
+
+
+kriterij.addEventListener('input', function () {
+  // TODO: da bude neosetljivo na velika i mala slova
+  const rezultati = sviFilmovi.filter(film => film.naziv.includes(kriterij.value))
+  render(rezultati)
+})
+
+function compareGodinaUp(a,b) {
+  if (a.godina < b.godina)
+    return -1;
+  if (a.godina > b.godina)
+    return 1;
+  return 0;
+}
+
+strGoreGod.addEventListener('click', function(e) {
+  e.preventDefault();
+  let sortirano = sviFilmovi.sort(compareGodinaUp);
+  render(sortirano)
+  console.log(sortirano);
+  
+});
+
+function compareGodinaDown(a,b) {
+  if (a.godina > b.godina)
+    return -1;
+  if (a.godina < b.godina)
+    return 1;
+  return 0;
+}
+
+strDoleGod.addEventListener('click', function(e) {
+  e.preventDefault();
+  let sortirano = sviFilmovi.sort(compareGodinaDown);
+  render(sortirano)
+  console.log(sortirano);
+});
+
+function compareNazivUp(a,b) {
+  if (a.naziv < b.naziv)
+    return -1;
+  if (a.naziv > b.naziv)
+    return 1;
+  return 0;
+}
+
+strGoreNaz.addEventListener('click', function(e) {
+  e.preventDefault();
+  let sortirano = sviFilmovi.sort(compareNazivUp);
+  render(sortirano)
+  console.log(sortirano);
+});
+
+function compareNazivuDown(a,b) {
+  if (a.naziv > b.naziv)
+    return -1;
+  if (a.naziv < b.naziv)
+    return 1;
+  return 0;
+}
+
+strDoleNaz.addEventListener('click', function(e) {
+  e.preventDefault();
+  let sortirano = sviFilmovi.sort(compareNazivuDown);
+  render(sortirano)
+  console.log(sortirano);
+});
