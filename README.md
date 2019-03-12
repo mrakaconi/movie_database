@@ -1,8 +1,10 @@
 # Movie_database
 
-
+ 
+        - header: (Marko)
 
         - header:
+
             - logo
             - dodaj film
             - naslovna
@@ -16,7 +18,14 @@
                 -pozivamo iz APIja (ako ima)
             - iframe trailera
                 -pozivamo iz APIja (ako ima)
-        - footer:
+        - footer: (Nikola)
             - credits
             - usefull links
- 
+
+
+stranica pretraga
+pretrazi po nazivu
+-poredjaj po godini
+-poredjaj po naslovu
+https://github.com/skolakoda/baza-filmova-api
+
