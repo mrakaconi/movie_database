@@ -3,9 +3,6 @@
  
         - header: (Marko)
 
-
-
-
         - header:
 
             - logo
@@ -25,8 +22,10 @@
             - credits
             - usefull links
 
+
 stranica pretraga
 pretrazi po nazivu
 -poredjaj po godini
 -poredjaj po naslovu
 https://github.com/skolakoda/baza-filmova-api
+
