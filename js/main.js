@@ -5,7 +5,7 @@ const postUrl = "https://baza-filmova.herokuapp.com/dodaj-film/"
 const deleteUrl = "https://baza-filmova.herokuapp.com/obrisi-film/"
 let stringUpis = ""
 
-const rezultatDiv = s("rezultat")
+const rezultatDiv = s("ispis")
 
 fetch("https://baza-filmova.herokuapp.com/filmovi")
   .then( response => response.json() )
