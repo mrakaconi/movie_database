@@ -13,32 +13,48 @@
 
 <body>
   <!-- Header -->
-  <div class="container">
-    <div class="row navigation">
-      <nav class="navbar navbar-expand-lg navbar-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="./index.html">Naslovna</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./pretraga.html">Pretraga Filmova</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./add.html">Dodaj Film</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+  <div class="header">
+    <div class="container">
+      <div class="row navigation">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">Naslovna</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./pretraga.html">Pretraga Filmova</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./add.html">Dodaj Film</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
   </div>
 
   <!--End of Header -->
 
+
+  <div class="grid-container">
+    <h1>Dodaj Film</h1>
+    <form action="#">
+      <label for="naziv">Naziv filma</label>
+      <input type="text" id="naziv" required>
+      <label for="godina">Godina</label>
+      <input type="text" id="godina" required>
+      <label for="slika">Slika URL</label>
+      <input type="text" id="slika" required>
+      <button type="submit">OK</button>
+    </form>
+  </div>
+  <!-- Footer -->
   <section id="footer">
       <div class="grid-container">
         <div class="grid-item">
