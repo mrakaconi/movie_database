@@ -7,6 +7,7 @@ const strDoleNaz = document.getElementById('dole_naz')
 
 
 
+
 let sviFilmovi = []
 
 function render(niz) {
@@ -98,3 +99,4 @@ strDoleNaz.addEventListener('click', function(e) {
   render(sortirano);
   console.log(sortirano);
 });
+
