@@ -74,15 +74,15 @@
 /* Footer */
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 section {
-    padding: 60px 0;
+    /* padding: 60px 0; */
 }
 
-section .section-title {
+/* section .section-title {
     text-align: center;
     color: #007b5e;
     margin-bottom: 50px;
     text-transform: uppercase;
-}
+} */
 #footer {
     background: #007b5e;
 }
