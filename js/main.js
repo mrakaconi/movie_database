@@ -10,21 +10,25 @@ const strDoleNaz = document.getElementById('dole_naz')
 let sviFilmovi = []
 
 function render(niz) {
-  let sablon = ''
-  for (var i = 0; i < niz.length; i++) {
-    sablon += ` <img src="${niz[i].slika}" alt="" width="100">
-                <h3>${niz[i].naziv}</h3>
-                <h3>${niz[i].godina}</h3>
-                `
+  stringUpis = ""
+  const limit = niz.length >= 50 ? 50 : niz.length
+  for (let i = 0; i < limit; i++) {
+    stringUpis += 
+    `<div class= "filmski-div">
+      <div class="iks"> <i class="fas fa-times-circle"></i></div>
+      <h3 class= "naslov-filma"> ${niz[i].naziv}</h3> 
+      <img src=${niz[i].slika} alt="" class="slike" width="100">
+      <p> Godina : ${niz[i].godina}</p> 
+    </div> `
   }
-  prikaz.innerHTML = sablon
+  prikaz.innerHTML = stringUpis
 }
 
 fetch('https://baza-filmova.herokuapp.com/filmovi/ ')
   .then(res => res.json())
   .then(data => {
     sviFilmovi = data
-    render(data)    
+    render(data)  
   })
 
 
@@ -45,9 +49,8 @@ function compareGodinaUp(a,b) {
 strGoreGod.addEventListener('click', function(e) {
   e.preventDefault();
   let sortirano = sviFilmovi.sort(compareGodinaUp);
-  render(sortirano)
+  render(sortirano);
   console.log(sortirano);
-  
 });
 
 function compareGodinaDown(a,b) {
@@ -61,7 +64,8 @@ function compareGodinaDown(a,b) {
 strDoleGod.addEventListener('click', function(e) {
   e.preventDefault();
   let sortirano = sviFilmovi.sort(compareGodinaDown);
-  render(sortirano)
+  render(sortirano);
+  
   console.log(sortirano);
 });
 
@@ -76,7 +80,7 @@ function compareNazivUp(a,b) {
 strGoreNaz.addEventListener('click', function(e) {
   e.preventDefault();
   let sortirano = sviFilmovi.sort(compareNazivUp);
-  render(sortirano)
+  render(sortirano);
   console.log(sortirano);
 });
 
@@ -91,6 +95,6 @@ function compareNazivuDown(a,b) {
 strDoleNaz.addEventListener('click', function(e) {
   e.preventDefault();
   let sortirano = sviFilmovi.sort(compareNazivuDown);
-  render(sortirano)
+  render(sortirano);
   console.log(sortirano);
 });
