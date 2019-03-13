@@ -73,10 +73,17 @@
 
 /* Footer */
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-section {
-    /* padding: 60px 0; */
-}
 
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto ;
+  
+  padding: 10px;
+}
+.grid-item {
+  
+  text-align: center;
+}
 /* section .section-title {
     text-align: center;
     color: #007b5e;
@@ -88,7 +95,7 @@ section {
 }
 #footer h5{
 	padding-left: 10px;
-    border-left: 3px solid #eeeeee;
+    
     padding-bottom: 6px;
     margin-bottom: 20px;
     color:#ffffff;
