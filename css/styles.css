@@ -7,12 +7,11 @@
 
   /* NAVBAR SECTION */
 
-
   .login {
     text-align: right;
     color: #daa520;
   }
-  
+
   .header {
     background-color: transparent;
   }
@@ -183,35 +182,3 @@
   box-shadow: 3px 3px 5px #000000;
 }
 
-.modal-header {
-  align-self: center;
-  width: 100%;
-  background-color: #778899
-}
-.modal-body {
-  text-align: center;
-}
-.black {
-  display: none;
-}
-.zatamnjena {
-  width: 100vw;
-  height: 100hw;
-  background-color: white;
-  color: black;
-  align-content: center;
-  position: absolute;
-  opacity: 0.3;
-}
-.modal2 {
-  display: none;
-  width: 500px;
-  height: 300px;
-  padding: 50px;
-  background-color: rgb(145, 18, 18);
-  color: white;
-  margin: 100px auto;
-  position: relative;
-  z-index: 1;
-
-}
