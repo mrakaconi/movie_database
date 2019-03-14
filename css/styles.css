@@ -7,11 +7,14 @@
 
   /* NAVBAR SECTION */
 
+  #id-filma {
+    display: none;
+  }
   .login {
     text-align: right;
     color: #daa520;
   }
-
+  
   .header {
     background-color: transparent;
   }
@@ -85,7 +88,19 @@
   
   text-align: center;
 }
-
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#footer {
+    background: #007b5e;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    font-size: x-small;
+}
 #footer h5{
 	padding-left: 10px;
   /* padding-bottom: 6px; */
@@ -182,3 +197,22 @@
   box-shadow: 3px 3px 5px #000000;
 }
 
+/* IKS DUGME */
+
+.iks:hover {
+  cursor: pointer;
+}
+
+.iks{
+  display: none;
+  position: absolute;
+  right:3px;
+  top:3px;
+}
+.filmski-div {
+  
+  position: relative;
+  
+}
+
+/* IKS DUGME END */

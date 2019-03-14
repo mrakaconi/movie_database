@@ -27,11 +27,14 @@ function render(niz) {
   for (let i = 0; i < limit; i++) {
     stringUpis +=
       `
+
       <div class="filmski-div">
       <div class="iks"><i class="fas fa-times-circle"></i></div>
       <h3 class= "naslov-filma">${niz[i].naziv}</h3> 
       <img src=${niz[i].slika} alt="" class="slike" width="100">
       <p> Godina : ${niz[i].godina}</p> 
+      <p id="id-filma">${niz[i]._id}</p>
+
       </div> 
     `
   }
