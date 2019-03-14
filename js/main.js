@@ -4,11 +4,21 @@ const strGoreGod = document.getElementById('gore_god')
 const strDoleGod = document.getElementById('dole_god')
 const strGoreNaz = document.getElementById('gore_naz')
 const strDoleNaz = document.getElementById('dole_naz')
-
-
-
+const logIn = document.getElementById('login')
+const username = document.getElementById('username')
+const password = document.getElementById('password')
 
 let sviFilmovi = []
+
+logIn.addEventListener('click', function () {
+  if (username.value == "admin" && password.value == "admin") {
+    const iks = document.getElementsByClassName('iks')
+    console.log(iks);
+    for (let i = 0; i < iks.length; i++) {
+      iks[i].style.display = "block"
+    }
+  }
+})
 
 function render(niz) {
   stringUpis = ""
@@ -29,7 +39,7 @@ fetch('https://baza-filmova.herokuapp.com/filmovi/ ')
   .then(res => res.json())
   .then(data => {
     sviFilmovi = data
-    render(data)  
+    render(data)
   })
 
 
@@ -99,4 +109,27 @@ strDoleNaz.addEventListener('click', function(e) {
   render(sortirano);
   console.log(sortirano);
 });
+
+// MODAL //
+
+var imageSF = document.querySelector('.trip-image');
+var backdrop = document.querySelector('.backdrop');
+var modal = document.querySelector('.modal');
+
+function openModal() {
+    backdrop.style.display = 'block';
+    modal.style.display = 'block';
+}
+
+function closeModal () {
+    backdrop.style.display = 'none';
+    modal.style.display = 'none';
+}
+
+imageSF.onclick = openModal;
+backdrop.onclick = closeModal;
+
+console.log(imageSF);
+
+// MODAL END //
 

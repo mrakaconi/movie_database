@@ -1,5 +1,3 @@
-// dodavanje slika
-
 const linkSlike = document.getElementById ('slika')
 const logo = document.getElementById ('logo1')
 
