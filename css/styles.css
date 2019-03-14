@@ -10,6 +10,7 @@
 
   .login {
     text-align: right;
+    color: #daa520;
   }
   
   .header {
@@ -44,9 +45,9 @@
     color: #daa520;
     font-weight: 700;
   }
-  .navbar-dark .navbar-nav .nav-link:hover{
+  /* .navbar-dark .navbar-nav .nav-link:hover{
     color: #000000;
-  }
+  } */
   .navbar-dark.black-font .navbar-nav .nav-link {
     color: #000000;
     font-weight: 700;
@@ -248,3 +249,36 @@
 } */
 
 /* MODAL END */
+
+/* .modal-header {
+  align-self: center;
+  width: 100%;
+  background-color: #778899
+}
+.modal-body {
+  text-align: center;
+}
+.black {
+  display: none;
+}
+.zatamnjena {
+  width: 100vw;
+  height: 100hw;
+  background-color: white;
+  color: black;
+  align-content: center;
+  position: absolute;
+  opacity: 0.3;
+}
+.modal2 {
+  display: none;
+  width: 500px;
+  height: 300px;
+  padding: 50px;
+  background-color: rgb(145, 18, 18);
+  color: white;
+  margin: 100px auto;
+  position: relative;
+  z-index: 1;
+
+} */

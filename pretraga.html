@@ -12,42 +12,100 @@
 </head>
 
 <body>
+
+  <!-- MODAL ADD-->
+
+  <div class="modal fade" id="myModalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false"
+    style=" overflow: scroll; height:auto;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">Dodaj Film</h4>
+        </div>
+        <div class="modal-body">
+          <h1>Dodaj Film</h1>
+          <form action="https://baza-filmova.herokuapp.com/dodaj-film/" method="POST">
+            Naziv: <br>
+            <input type="text" name="naziv"><br>
+            Godina: <br>
+            <input id="godina" type="text" name="godina"><br>
+            Slika URL: <br>
+            <input id="slika" type="text" name="slika"> <br><br>
+            <input type="submit" value="OK">
+          </form>
+          <div id="picture" class="picture">
+            <img src="#" alt="klapa" id="logo1">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL ADD END -->
+
+  <!-- MODAL INFO -->
+
+  <div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">FILM INFO</h4>
+        </div>
+        <div class="modal-body">
+          <p class="glumci"></p>
+          <p class="plot"></p>
+          <p class="nagrade"></p>
+          <button id="ok" type="button">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL INFO END -->
+
+  <!-- HEADER -->
+
   <div class="pozadina">
     <div class="header">
       <div class="container">
         <div class="row navigation">
           <nav class="navbar navbar-expand-lg navbar-dark">
             <nav class="navbar navbar-expand-lg navbar-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="./index.html">Naslovna</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./pretraga.html">Pretraga Filmova</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link add" href="./add.html" data-toggle="modal" data-target="./modal.html">Dodaj Film</a>
-                </li>
-                <div class="login">
-                <li class="nav-item">
-                    <span class="login" > Username: </span>
-                    <input type="text" class="polje" id="username"><br>
-                    <span class="login" > Password: </span>
-                    <input type="password" class="polje" id="password"><br>
-                    <button type="button" id="login">Uloguj se</button>
-                </li>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Naslovna</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./pretraga.html">Pretraga Filmova</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#myModalAdd" href="#">Dodaj Film</a>
+                  </li>
+                  <div class="login">
+                    <li class="nav-item">
+                      <span class="login"> Username: </span>
+                      <input type="text" class="polje" id="username"><br>
+                      <span class="login"> Password: </span>
+                      <input type="password" class="polje" id="password"><br>
+                      <button type="button" id="login">Uloguj se</button>
+                    </li>
+                  </div>
+                </ul>
               </div>
-              </ul>
-            </div>
-          </nav>
+            </nav>
         </div>
       </div>
     </div>
+
+    <!-- HEADER END -->
+
+    <!-- MAIN -->
+
     <div class="row main">
       <form id="search-movies">
         <label for="title">Naslov:</label>
@@ -66,6 +124,9 @@
       <div class="grid-container-main" id="ispis"></div>
     </div>
 
+    <!-- MAIN END -->
+
+    <!-- FOOTER -->
 
     <section id="footer">
       <div class="grid-container">
@@ -78,7 +139,6 @@
             <li><a href="https://www.amctheatres.com/movies"><i class="fa fa-angle-double-right"></i>Amctheatres</a>
             </li>
             <li><a href="https://www.regmovies.com/"><i class="fa fa-angle-double-right"></i>Regmovies</a></li>
-
           </ul>
         </div>
         <div class="grid-item">
@@ -86,15 +146,12 @@
           <ul class="list-unstyled quick-links">
             <li><a href="./index.html"><i class="fa fa-angle-double-right"></i>Naslovna</a></li>
             <li><a href="./pretraga.html"><i class="fa fa-angle-double-right"></i>Pretraga</a></li>
-            <li><a href="./add.html"><i class="fa fa-angle-double-right"></i>Dodaj film</a></li>
-
+            <li><a href="#"><i class="fa fa-angle-double-right"></i>Dodaj film</a></li>
           </ul>
         </div>
-
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-
           <p class="h6">&copy All right Reversed.<a class="text-green ml-2"
               href="https://github.com/mrakaconi/movie_database/tree/ewoks_grana" target="_blank">Ewoksic &
               Markaconi</a></p>
@@ -103,12 +160,8 @@
       </div>
     </section>
   </div>
-  <!-- End of Footer -->
 
-
-
-
-
+  <!-- FOOTER END -->
 
   <script src="./js/jquery-3.3.1.min.js"></script>
   <script src="./js/bootstrap.min.js"></script>
