@@ -34,7 +34,6 @@ function render(niz) {
       <img src=${niz[i].slika} alt="" class="slike" width="100">
       <p> Godina : ${niz[i].godina}</p> 
       <p id="id-filma">${niz[i]._id}</p>
-
       </div> 
     `
   }
