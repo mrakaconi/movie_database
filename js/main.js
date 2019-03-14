@@ -7,17 +7,19 @@ const strDoleNaz = document.getElementById('dole_naz')
 const logIn = document.getElementById('login')
 const username = document.getElementById('username')
 const password = document.getElementById('password')
-let sviFilmovi = []
+let sviFilmovi = [];
+console.log(sviFilmovi);
 
-// logIn.addEventListener('click', function () {
-//   if (username.value == "admin" && password.value == "admin") {
-//     const iks = document.getElementsByClassName('iks')
-//     console.log(iks);
-//     for (let i = 0; i < iks.length; i++) {
-//       iks[i].style.display = "block"
-//     }
-//   }
-// })
+
+logIn.addEventListener('click', function () {
+  if (username.value == "admin" && password.value == "admin") {
+    const iks = document.getElementsByClassName('iks')
+    console.log(iks);
+    for (let i = 0; i < iks.length; i++) {
+      iks[i].style.display = "block"
+    }
+  }
+})
 
 function render(niz) {
   stringUpis = ""
@@ -46,7 +48,7 @@ fetch('https://baza-filmova.herokuapp.com/filmovi/ ')
 kriterij.addEventListener('input', function () {
   // TODO: da bude neosetljivo na velika i mala slova
   const rezultati = sviFilmovi.filter(film => film.naziv.includes(kriterij.value))
-  render(rezultati)
+  render(rezultati)  
 })
 
 function compareGodinaUp(a, b) {
@@ -114,6 +116,19 @@ strDoleNaz.addEventListener('click', function (e) {
 
 $(document).on('click', ".filmski-div", function (){
   $("#myModal").modal('show');
+  let ime = $(this).find("h3").html()
+  
+  fetch(`http://www.omdbapi.com/?t=${ime}&plot=full&apikey=c3d2adef`)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+    
+    document.querySelector(".naziv").innerHTML = data.Title;
+    document.querySelector(".glumci").innerHTML = data.Actors;
+    document.querySelector(".plot").innerHTML = data.Plot;
+    document.querySelector(".nagrade").innerHTML = data.Awards;
+})
+
 });
 $('#ok').on('click', function () {
   $("#myModal").modal('hide');
@@ -121,16 +136,7 @@ $('#ok').on('click', function () {
 
 // MODAL END 
 
-fetch(`http://www.omdbapi.com/?t=${niz[i].naziv}&plot=full&apikey=c3d2adef`)
-  .then(res => res.json())
-  .then(data => {
-    document.querySelector(".slika").innerHTML = data.Title;
-    document.querySelector(".naziv").innerHTML = data.Title;
-    document.querySelector(".glumci").src = data.Plot;
-    document.querySelector(".plot").innerHTML = data.Plot;
-    document.querySelector(".nagrade").innerHTML = data.Awards;
-    
-})
+
 
 
 
