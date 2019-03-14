@@ -9,15 +9,15 @@ const username = document.getElementById('username')
 const password = document.getElementById('password')
 let sviFilmovi = []
 
-logIn.addEventListener('click', function () {
-  if (username.value == "admin" && password.value == "admin") {
-    const iks = document.getElementsByClassName('iks')
-    console.log(iks);
-    for (let i = 0; i < iks.length; i++) {
-      iks[i].style.display = "block"
-    }
-  }
-})
+// logIn.addEventListener('click', function () {
+//   if (username.value == "admin" && password.value == "admin") {
+//     const iks = document.getElementsByClassName('iks')
+//     console.log(iks);
+//     for (let i = 0; i < iks.length; i++) {
+//       iks[i].style.display = "block"
+//     }
+//   }
+// })
 
 function render(niz) {
   stringUpis = ""
@@ -25,32 +25,15 @@ function render(niz) {
   for (let i = 0; i < limit; i++) {
     stringUpis +=
       `
-      <div id="filmski-div">
+      <div class="filmski-div">
       <div class="iks"><i class="fas fa-times-circle"></i></div>
-      <h3 class= "naslov-filma"> ${niz[i].naziv}</h3> 
+      <h3 class= "naslov-filma">${niz[i].naziv}</h3> 
       <img src=${niz[i].slika} alt="" class="slike" width="100">
       <p> Godina : ${niz[i].godina}</p> 
       </div> 
     `
   }
   prikaz.innerHTML = stringUpis;
-
-  // for (let i = 0; i < limit; i++) {
-  //   const filmInfo = `http://www.omdbapi.com/?t=${niz[i].naziv}&y=${niz[i].godina}&plot=full&apikey=xxxxxx`
-
-  //   fetch(filmInfo)
-  //     .then(response => response.json())
-  //     .then(podatak => {
-  //       console.log(podatak);
-  //       const glumci = podatak.Actors;
-  //       const plot = podatak.Plot;
-  //       const nagrade = podatak.Awards;
-  //       document.getElementById('glumci').innerHTML = glumci
-  //       document.getElementById('plot').innerHTML = plot
-  //       document.getElementById('nagrade').innerHTML = nagrade
-
-  //     });
-  // }
 }
 
 fetch('https://baza-filmova.herokuapp.com/filmovi/ ')
@@ -129,31 +112,25 @@ strDoleNaz.addEventListener('click', function (e) {
 
 // MODAL
 
-$("#filmski-div").on("click", function () {
+$(document).on('click', ".filmski-div", function (){
   $("#myModal").modal('show');
-})
+});
 $('#ok').on('click', function () {
   $("#myModal").modal('hide');
 })
 
 // MODAL END 
 
-
-// function ucitajPodatke() {
-//   const filmInfo = `http://www.omdbapi.com/?t=${niz[i].naziv}&plot=full&apikey=c3d2adef`
-
-//   fetch(filmInfo)
-//     .then(response => response.json())
-//     .then(podatak => {
-//       const glumci = podatak.Actors;
-//       const plot = podatak.Plot;
-//       const nagrade = podatak.Awards;
-//       document.getElementById('glumci').innerHTML = glumci
-//       document.getElementById('plot').innerHTML = plot
-//       document.getElementById('nagrade').innerHTML = nagrade
-//       console.log(podatak);
-//     });
-// }
+fetch(`http://www.omdbapi.com/?t=${niz[i].naziv}&plot=full&apikey=c3d2adef`)
+  .then(res => res.json())
+  .then(data => {
+    document.querySelector(".slika").innerHTML = data.Title;
+    document.querySelector(".naziv").innerHTML = data.Title;
+    document.querySelector(".glumci").src = data.Plot;
+    document.querySelector(".plot").innerHTML = data.Plot;
+    document.querySelector(".nagrade").innerHTML = data.Awards;
+    
+})
 
 
 
