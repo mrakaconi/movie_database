@@ -175,6 +175,15 @@ section .section-title {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  
+}
+.pozadina2 {
+  background-image: url(../img/wiki-movie-bckg.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 
 #search-movies {
